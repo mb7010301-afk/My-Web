@@ -1,293 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Royal Taste Restaurant 1</title>
+<title>Creative Design Studio | Web & Graphic Design</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+body{
+  font-family:Arial,sans-serif;
+  background:#0b0b14;
+  color:white;
+  line-height:1.6;
+}
 
-        body {
-            background: #fffaf3;
-            color: #222;
-        }
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(11,11,20,.95);
+  padding:18px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #29293d;
+}
 
-        header {
-            background: #111;
-            color: white;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+.logo{
+  font-size:24px;
+  font-weight:bold;
+  color:#fff;
+}
 
-        .logo {
-            color: #f5b942;
-            font-size: 26px;
-            font-weight: bold;
-        }
+.logo span{
+  color:#b56cff;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 15px;
-        }
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:22px;
+  font-size:14px;
+}
 
-        nav a:hover {
-            color: #f5b942;
-        }
+nav a:hover{
+  color:#c875ff;
+}
 
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 30px 20px;
-            background:
-                linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
-                linear-gradient(135deg, #7b1e1e, #e09f3e);
-            color: white;
-        }
+.hero{
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:60px 8%;
+  background:
+    radial-gradient(circle at 20% 20%,#7026a855,transparent 35%),
+    radial-gradient(circle at 80% 70%,#ff3f9b33,transparent 35%);
+}
 
-        .hero h1 {
-            font-size: 55px;
-            margin-bottom: 15px;
-        }
+.hero h1{
+  font-size:clamp(42px,7vw,78px);
+  margin-bottom:20px;
+}
 
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-        }
+.hero h1 span{
+  background:linear-gradient(90deg,#c36cff,#ff65a8,#6ecbff);
+  -webkit-background-clip:text;
+  color:transparent;
+}
 
-        .btn {
-            display: inline-block;
-            background: #f5b942;
-            color: #111;
-            padding: 14px 28px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+.hero p{
+  max-width:700px;
+  margin:auto;
+  color:#c7c7d4;
+  font-size:18px;
+}
 
-        .btn:hover {
-            background: white;
-        }
+.btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:14px 28px;
+  border-radius:30px;
+  background:linear-gradient(90deg,#a855f7,#ec4899);
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
 
-        section {
-            padding: 70px 8%;
-        }
+section{
+  padding:80px 8%;
+}
 
-        .title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+.title{
+  text-align:center;
+  font-size:38px;
+  margin-bottom:45px;
+}
 
-        .title h2 {
-            font-size: 35px;
-            color: #7b1e1e;
-        }
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:22px;
+}
 
-        .title p {
-            margin-top: 10px;
-            color: #666;
-        }
+.card{
+  background:#151522;
+  padding:30px;
+  border-radius:20px;
+  border:1px solid #29293d;
+  transition:.3s;
+}
 
-        .menu {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
+.card:hover{
+  transform:translateY(-7px);
+  border-color:#b56cff;
+}
 
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,.1);
-            text-align: center;
-            transition: .3s;
-        }
+.card .icon{
+  font-size:38px;
+  margin-bottom:15px;
+}
 
-        .card:hover {
-            transform: translateY(-8px);
-        }
+.card h3{
+  margin-bottom:10px;
+}
 
-        .food {
-            font-size: 55px;
-            margin-bottom: 15px;
-        }
+.card p{
+  color:#aaaaba;
+  font-size:14px;
+}
 
-        .card h3 {
-            margin-bottom: 10px;
-            color: #7b1e1e;
-        }
+.about{
+  max-width:850px;
+  margin:auto;
+  text-align:center;
+  color:#c7c7d4;
+}
 
-        .price {
-            color: #d38b16;
-            font-weight: bold;
-            font-size: 20px;
-            margin-top: 15px;
-        }
+.portfolio{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
 
-        .about {
-            background: #f3e5d0;
-            text-align: center;
-        }
+.work{
+  min-height:200px;
+  border-radius:20px;
+  padding:30px;
+  display:flex;
+  flex-direction:column;
+  justify-content:end;
+  background:linear-gradient(135deg,#7c3aed,#ec4899);
+}
 
-        .about p {
-            max-width: 750px;
-            margin: auto;
-            line-height: 1.8;
-            color: #555;
-        }
+.work:nth-child(2){
+  background:linear-gradient(135deg,#2563eb,#06b6d4);
+}
 
-        .contact {
-            text-align: center;
-        }
+.work:nth-child(3){
+  background:linear-gradient(135deg,#db2777,#f97316);
+}
 
-        .contact-box {
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,.1);
-        }
+.work:nth-child(4){
+  background:linear-gradient(135deg,#059669,#14b8a6);
+}
 
-        .contact-box p {
-            margin: 12px 0;
-            font-size: 18px;
-        }
+.contact{
+  text-align:center;
+  background:#11111d;
+}
 
-        footer {
-            background: #111;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
+.contact p{
+  color:#c7c7d4;
+}
 
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
+footer{
+  text-align:center;
+  padding:25px;
+  color:#888899;
+  border-top:1px solid #29293d;
+}
 
-            nav a {
-                margin: 0 7px;
-            }
+@media(max-width:700px){
+  header{
+    padding:15px 5%;
+  }
 
-            .hero h1 {
-                font-size: 38px;
-            }
+  nav a{
+    margin-left:10px;
+    font-size:12px;
+  }
 
-            .menu {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  section{
+    padding:60px 5%;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <div class="logo">🍽 Royal Taste</div>
+  <div class="logo">Creative <span>Design Studio</span></div>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#menu">Menu</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <section class="hero" id="home">
-    <div>
-        <h1>Delicious Food, Happy Moments</h1>
-        <p>Fresh ingredients • Great taste • Beautiful experience</p>
-        <a href="#menu" class="btn">View Our Menu</a>
-    </div>
-</section>
-
-<section id="menu">
-    <div class="title">
-        <h2>Our Popular Menu</h2>
-        <p>Try our customer's favorite dishes</p>
-    </div>
-
-    <div class="menu">
-
-        <div class="card">
-            <div class="food">🍕</div>
-            <h3>Special Pizza</h3>
-            <p>Fresh vegetables, cheese and our special sauce.</p>
-            <div class="price">Rs. 899</div>
-        </div>
-
-        <div class="card">
-            <div class="food">🍔</div>
-            <h3>Classic Burger</h3>
-            <p>Juicy beef burger with fresh vegetables and cheese.</p>
-            <div class="price">Rs. 599</div>
-        </div>
-
-        <div class="card">
-            <div class="food">🍗</div>
-            <h3>Chicken Platter</h3>
-            <p>Delicious grilled chicken served with fries.</p>
-            <div class="price">Rs. 1,099</div>
-        </div>
-
-    </div>
-</section>
-
-<section class="about" id="about">
-    <div class="title">
-        <h2>About Us</h2>
-    </div>
+  <div>
+    <h1>Ideas Into <span>Visuals</span></h1>
 
     <p>
-        Welcome to Royal Taste Restaurant.
-        We serve delicious food made with fresh ingredients.
-        Our goal is to give every customer a memorable dining experience.
+      Professional Graphic Design & Web Design services
+      for businesses, brands and creators.
     </p>
+
+    <a class="btn" href="#contact">Let's Work Together</a>
+  </div>
+</section>
+
+<section id="services">
+  <h2 class="title">My Services</h2>
+
+  <div class="services">
+
+    <div class="card">
+      <div class="icon">🌐</div>
+      <h3>Web Design</h3>
+      <p>Modern, responsive and user-friendly websites for your business.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎨</div>
+      <h3>Graphic Design</h3>
+      <p>Creative designs, posters, banners and marketing materials.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">✨</div>
+      <h3>Logo Design</h3>
+      <p>Unique and professional logos designed for your brand identity.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📱</div>
+      <h3>Social Media Design</h3>
+      <p>Eye-catching posts, covers and social media graphics.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">💼</div>
+      <h3>Branding</h3>
+      <p>Professional brand identity to make your business memorable.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📇</div>
+      <h3>Business Designs</h3>
+      <p>Business cards, stationery and promotional designs.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="portfolio">
+  <h2 class="title">My Portfolio</h2>
+
+  <div class="portfolio">
+
+    <div class="work">
+      <h3>Website Design</h3>
+      <p>Modern Business Website</p>
+    </div>
+
+    <div class="work">
+      <h3>Graphic Design</h3>
+      <p>Creative Marketing Designs</p>
+    </div>
+
+    <div class="work">
+      <h3>Brand Identity</h3>
+      <p>Logo & Branding Projects</p>
+    </div>
+
+    <div class="work">
+      <h3>Social Media</h3>
+      <p>Posts & Promotional Graphics</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="title">About Me</h2>
+
+  <div class="about">
+    <p>
+      Welcome to Creative Design Studio.
+      I provide professional web design and graphic design
+      services with a focus on modern, clean and creative visuals.
+      Let's turn your ideas into something amazing.
+    </p>
+  </div>
 </section>
 
 <section class="contact" id="contact">
-    <div class="title">
-        <h2>Contact Us</h2>
-        <p>We would love to hear from you!</p>
-    </div>
+  <h2 class="title">Let's Work Together</h2>
 
-    <div class="contact-box">
-        <p>📍 Main Street, Pakistan</p>
-        <p>📞 +92 300 1234567</p>
-        <p>📧 info@royaltaste.com</p>
+  <p>Have a project in mind? Send me a message and let's discuss it.</p>
 
-        <br>
-
-        <a href="tel:+923001234567" class="btn">
-            Call Now
-        </a>
-    </div>
+  <a class="btn"
+     href="https://m.me/CreativeDesignStudio"
+     target="_blank">
+     📩 Message Me
+  </a>
 </section>
 
 <footer>
-    <p>© 2026 Royal Taste Restaurant. All Rights Reserved.</p>
+  © 2026 Creative Design Studio • Web & Graphic Design
 </footer>
 
 </body>
